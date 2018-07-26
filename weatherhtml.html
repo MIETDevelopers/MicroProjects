@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="weathercss.css">
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function () {
+    
+   
+    // Call Weather
+    function weather() {
+        var URL = "https://fcc-weather-api.glitch.me/api/current?lat=32.72&lon=74.85";
+
+        $.getJSON(URL, function(data) {
+            updateDOM(data);
+        });
+    }
+weather();
+    // Update Dom
+    function updateDOM(data) {
+        var city = data.name;
+        var temp = data.main.temp_max;
+        var desc = data.weather[0].description;
+        var icon = data.weather[0].icon;
+
+        $("#city").html(city);
+        $("#temp").html(temp);
+        $("#desc").html(desc);
+        $("#icon").attr("src", icon);
+    }
+});
+</script>
+<div class="container">
+	
+	<h2 id="city"></h2>
+	
+	<div class="middle">
+		<img src="" alt="icon" id="icon">
+		<div class="degrees">
+			<h1 id="temp"></h1>
+			<span>&#176;</span>
+		</div>
+		<h3 id="desc"></h3>
+	</div>
+	
+</div>
+</body>
+</html>
