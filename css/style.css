@@ -1,3 +1,53 @@
-/*
-Put your css here
-*/
+.box{
+   display: none;
+   width: 100%;
+}
+a:hover + .box,.box:hover{
+   display: block;
+   position: absolute;
+   z-index: 100;
+}
+.map{
+   display: none;
+   width: 100%;
+}
+a:hover + .map,.map:hover{
+   display: block;
+   position: absolute;
+   z-index: 100;
+}
+
+.wea{
+   display: none;
+   width: 100%;
+}
+a:hover + .wea,.wea:hover{
+   display: block;
+   position: absolute;
+   z-index: 100;
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.background{
+    width: auto;
+    height: auto;
+    border: 5px solid black;
+    margin: 10px;
+    text-align: center;
+    padding: 25px 25px 25px 25px;
+    }
